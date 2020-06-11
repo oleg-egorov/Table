@@ -1,0 +1,123 @@
+$text: 'Arial';
+
+.Table {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.Table__Content {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid darkgray;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+
+    td {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        width: 35%;
+        transition: ease-in-out 150ms;
+        border-right: 2px dotted darkgray;
+
+        &:first-child {
+            width: 10%;
+        }
+
+        &:last-child {
+            border-right: none;
+            width: 20%;
+        }
+
+        p {
+            margin: 0;
+            text-align: center;
+            font-family: $text;
+            font-weight: 600;
+            font-size: 20px;
+        }
+    }
+}
+
+tr:nth-child(2n) {
+    background-color: lightgray;
+}
+
+.Table__Header {
+    .Table__HeaderRow {
+        background-color: rgb(92, 92, 92);
+
+        td {
+            color: white;
+            border-right: 2px solid gray;
+
+            &:hover {
+                background-color: rgb(70, 70, 70);
+                cursor: pointer;
+            }
+
+            &:active {
+                background-color: rgb(50, 50, 50);
+            }
+        }
+    }
+}
+
+.Table__BoxArrow {
+    .Table__Arrow_ASC {
+        margin: 8px;
+        content: '';
+        position: absolute;
+        border: 10px solid transparent;
+        border-top: 10px solid white;
+        transition: transform ease-in-out 200ms;
+    }
+
+    .Table__Arrow_DESC {
+        margin: 8px;
+        content: '';
+        position: absolute;
+        border: 10px solid transparent;
+        border-top: 10px solid white;
+        transform: scaleY(-1) translate(0, 50%);
+        transition: transform ease-in-out 200ms;
+    }
+}
+
+.Table__Panel {
+    display: flex;
+    height: 30px;
+    margin-bottom: 20px;
+
+    .Table__PanelCross {
+        height: 30px;
+        width: 30px;
+        border: 1px solid gray;
+        border-left: none;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:active {
+            background-color: lightgray;
+        }
+
+        p {
+            font-family: $text;
+            font-size: 28px;
+            transform: rotate(45deg);
+        }
+    }
+
+    .Table__PanelSearch {
+        border: 1px solid gray;
+        font-size: 24px;
+        height: 30px;
+        outline: none;
+        padding: 5px 10px;
+    }
+}
